@@ -7,9 +7,13 @@ const Ship = (shipLength, isVerticalBoolean) => {
 
   const getLength = () => length;
 
+  const getShipHits = () => shipHits;
+
   const hit = (areaToHit) => { shipHits[areaToHit] = true; };
 
   const isAreaHit = (areaToCheck) => shipHits[areaToCheck];
+
+  const sinkShip = () => shipHits.forEach((area, i) => hit(i));
 
   return {
     hit,
@@ -17,6 +21,8 @@ const Ship = (shipLength, isVerticalBoolean) => {
     isSunk,
     isVertical,
     getLength,
+    sinkShip,
+    getShipHits,
   };
 };
 

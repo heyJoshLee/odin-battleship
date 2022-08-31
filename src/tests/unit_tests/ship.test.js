@@ -37,3 +37,9 @@ it('.hit() multiple hits hit multiple areas of a ship', () => {
   expect(ship.isAreaHit(0)).toBe(true);
   expect(ship.isAreaHit(1)).toBe(false);
 });
+
+it('.sinkShip() hits all areas of the ship', () => {
+  const ship = Ship(3, true);
+  ship.sinkShip();
+  expect(ship.isSunk()).toBe(true);
+});
